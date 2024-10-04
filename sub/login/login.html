@@ -10,9 +10,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="login.css">
     <link href="/manifest.json" rel="manifest">
-    
+
     <script crossorigin="anonymous" src="https://an2-ast.amz.wtchn.net/js/print_watcha.js" async defer></script>
 
+    <!-- 자바스크립트 함수 추가 -->
+    <script>
+        function validateEmail() {
+            const emailField = document.querySelector('input[name="email"]');
+            const emailCheckIcon = document.querySelector('.email-check-icon');
+
+            // 이메일이 입력되었는지 확인
+            if (emailField.value.trim() !== "") {
+                emailCheckIcon.style.display = 'inline-block';  // 체크박스 표시
+            } else {
+                emailCheckIcon.style.display = 'none';  // 체크박스 숨기기
+            }
+        }
+
+        function validatePassword() {
+            const passwordField = document.querySelector('input[name="password"]');
+            const passwordXIcon = document.querySelector('.password-x-icon');
+            const passwordOIcon = document.querySelector('.password-o-icon');
+
+            // 비밀번호 입력이 없으면 모든 아이콘을 숨김
+            if (passwordField.value === "") {
+                passwordXIcon.style.display = 'none';
+                passwordOIcon.style.display = 'none';
+                return;
+            }
+
+            // 비밀번호가 6자리 이상인지 확인
+            if (passwordField.value.length >= 6) {
+                passwordXIcon.style.display = 'none';  // X 아이콘 숨기기
+                passwordOIcon.style.display = 'inline-block';  // O 아이콘 표시
+            } else {
+                passwordXIcon.style.display = 'inline-block';  // X 아이콘 표시
+                passwordOIcon.style.display = 'none';  // O 아이콘 숨기기
+            }
+        }
+
+        // 페이지 로드 시 초기 아이콘 상태 설정
+        window.onload = function() {
+            document.querySelector('.email-check-icon').style.display = 'none';
+            document.querySelector('.password-x-icon').style.display = 'none';
+            document.querySelector('.password-o-icon').style.display = 'none';
+        }
+    </script>
+
+    <style>
+        .check-icon, .password-x-icon, .password-o-icon {
+            width: 24px;
+            height: 24px;
+            display: none; /* 처음에 아이콘은 표시되지 않음 */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* 이메일 체크박스 아이콘 */
+        .email-check-icon {
+            background-image: url('https://do6ll9a75gxk6.cloudfront.net/images/ic-valid.59d67050640d7e7c590c.svg?resource');
+        }
+
+        /* 비밀번호 X 아이콘 */
+        .password-x-icon {
+            background-image: url('https://do6ll9a75gxk6.cloudfront.net/images/ic-invalid.364ee04e13e5d1d4ac9f.svg?resource');
+        }
+
+        /* 비밀번호 O 아이콘 */
+        .password-o-icon {
+            background-image: url('https://do6ll9a75gxk6.cloudfront.net/images/ic-valid.59d67050640d7e7c590c.svg?resource');
+        }
+    </style>
 </head>
 
 <body data-theme="dark">
@@ -27,11 +95,18 @@
                             <div class="XR34U" data-select="email_field_wrapper">
                                 <input name="email" class="b7GFp IIYVe B5lDE Field" autocomplete="off" 
                                        data-select="email-field" placeholder="이메일 (example@gmail.com)" 
-                                       autofocus type="email">
+                                       autofocus type="email" oninput="validateEmail()">
+                                <!-- 이메일 체크박스 아이콘 -->
+                                <span class="check-icon email-check-icon"></span>
                             </div>
                             <div class="XR34U" data-select="password_field_wrapper">
                                 <input name="password" class="_f3gM IIYVe NLtfk Field" autocomplete="off" 
-                                       data-select="password-field" placeholder="비밀번호" type="password">
+                                       data-select="password-field" placeholder="비밀번호" type="password" 
+                                       oninput="validatePassword()">
+                                <!-- 비밀번호 X 아이콘 -->
+                                <span class="check-icon password-x-icon"></span>
+                                <!-- 비밀번호 O 아이콘 -->
+                                <span class="check-icon password-o-icon"></span>
                             </div>
                             <div class="DeLab">
                                 <button class="agzZ_ tqNbI" type="submit" data-select="submit">로그인</button>

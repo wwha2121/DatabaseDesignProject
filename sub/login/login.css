@@ -25255,3 +25255,36 @@ li>.RXeCR {
     justify-content: center;
     position: fixed
 }
+
+.check-icon {
+    background-image: url(https://do6ll9a75gxk6.cloudfront.net/images/ic-valid.59d6705….svg?resource);
+    bottom: auto;
+    display: inline-block;
+    height: 20px;
+    margin-top: -10px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 20px;
+}
+
+.check-icon {
+        bottom: auto;
+        display: inline-block;
+        height: 20px;
+        margin-top: -10px;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        width: 20px;
+}
+.check-icon {
+        bottom: auto;
+        display: inline-block;
+        height: 20px;
+        margin-top: -10px;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        width: 20px;
+}
