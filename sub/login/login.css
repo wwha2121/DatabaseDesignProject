@@ -5337,6 +5337,17 @@ screen and (-ms-high-contrast:active) {
     z-index: 3
 }
 
+.agzZ_ {
+    background-color: #4A90E2; 
+    color: #FFFFFF; 
+    border: none;
+    border-radius: 5px; 
+}
+
+.agzZ_:hover {
+    background-color: #357ABD; 
+}
+
 .PaY8k {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);

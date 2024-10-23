@@ -2865,6 +2865,18 @@ html body .H2DRm {
     height: 1px
 }
 
+.PMH0f {
+    background-color: #4A90E2; 
+    color: #FFFFFF; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+}
+
+.PMH0f:hover {
+    background-color: #357ABD; 
+}
+
 .merhl .background-bar {
     background-color: var(--color-gray30);
     overflow: hidden;

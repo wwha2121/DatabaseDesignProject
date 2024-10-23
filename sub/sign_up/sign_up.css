@@ -416,6 +416,17 @@ input[type=submit]:focus-visible {
     -ms-overflow-style: none
 }
 
+.PMH0f.FONGi._JKgP.bHfaw.bBcRu.qz3Mr {
+    background-color: #4A90E2; 
+    color: #FFFFFF; 
+    border: none;
+    border-radius: 5px; 
+}
+
+.PMH0f.FONGi._JKgP.bHfaw.bBcRu.qz3Mr:hover {
+    background-color: #357ABD; 
+}
+
 @keyframes skeleton {
     0% {
         background-color: var(--color-gray10)
