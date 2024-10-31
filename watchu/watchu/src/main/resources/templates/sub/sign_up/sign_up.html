@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="icon" href="../../img/icon/favicon.ico">
+    <title>왓츄 회원가입 페이지</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="sign_up.css">
+    <link href="/manifest.json" rel="manifest">
+
+    <script crossorigin="anonymous" src="https://an2-ast.amz.wtchn.net/js/print_watcha.js" async defer></script>
+    <style>
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            display: none; /* 처음에 아이콘은 표시되지 않음 */
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left: 10px;
+        }
+
+        /* 비밀번호 X 아이콘 */
+        .password-x-icon {
+            background-image: url('https://do6ll9a75gxk6.cloudfront.net/images/ic-invalid.364ee04e13e5d1d4ac9f.svg?resource');
+        }
+
+        /* 비밀번호 O 아이콘 */
+        .password-o-icon {
+            background-image: url('https://do6ll9a75gxk6.cloudfront.net/images/ic-valid.59d67050640d7e7c590c.svg?resource');
+        }
+    </style>
+
+    <!-- 자바스크립트 함수 추가 -->
+    <script>
+        function validatePassword() {
+            const passwordField = document.querySelector('input[name="password"]');
+            const passwordXIcon = document.querySelector('.password-x-icon');
+            const passwordOIcon = document.querySelector('.password-o-icon');
+
+            // 비밀번호 입력이 없으면 모든 아이콘을 숨김
+            if (passwordField.value === "") {
+                passwordXIcon.style.display = 'none';
+                passwordOIcon.style.display = 'none';
+                return;
+            }
+
+            // 비밀번호가 6자리 이상인지 확인
+            if (passwordField.value.length >= 6) {
+                passwordXIcon.style.display = 'none';  // X 아이콘 숨기기
+                passwordOIcon.style.display = 'inline-block';  // O 아이콘 표시
+            } else {
+                passwordXIcon.style.display = 'inline-block';  // X 아이콘 표시
+                passwordOIcon.style.display = 'none';  // O 아이콘 숨기기
+            }
+        }
+
+        // 페이지 로드 시 초기 아이콘 상태 설정
+        window.onload = function() {
+            document.querySelector('.password-x-icon').style.display = 'none';
+            document.querySelector('.password-o-icon').style.display = 'none';
+        }
+    </script>
+</head>
+
+<body data-theme="dark">
+    <div id="root">
+        <div class="navManager GQU3t c98q7 kvrJG">
+            <nav class="HBsNq"></nav>
+            <main class="KywLO">
+                <div class="KUCJO">
+                    <div class="oHD5B">
+                        <div class="X9r3v"><span class="RJ5yp PO6sA">회원가입</span></div>
+                        <form>
+                            <span>이름</span>
+                            <input class="DXap6 Zcvzh b0Mci" data-select="name" name="name" placeholder="이름 (2자 이상)">
+                            <div style="height: 20px;"></div>
+
+                            <span>생년월일</span>
+                            <input class="DXap6 Zcvzh b0Mci" data-select="birthdate" name="birthdate" type="date">
+                            <div style="height: 20px;"></div>
+
+                            <span>성별</span>
+                            <select class="DXap6 Zcvzh b0Mci" data-select="gender" name="gender">
+                                <option value="" disabled selected>성별을 선택하세요</option>
+                                <option value="male">남성</option>
+                                <option value="female">여성</option>
+                                <option value="other">기타</option>
+                            </select>
+                            <div style="height: 20px;"></div>
+
+                            <span>이메일</span>
+                            <input class="DXap6 Zcvzh b0Mci" autocomplete="off" data-select="email" name="email" placeholder="이메일 (example@gmail.com)" type="email">
+                            <div style="height: 20px;"></div>
+
+                            <span>비밀번호</span>
+                            <div style="display: flex; align-items: center;">
+                                <input class="DXap6 Zcvzh b0Mci" data-select="password" name="password" placeholder="비밀번호 (6자 이상)" type="password" oninput="validatePassword()">
+                                <!-- 비밀번호 X 아이콘 -->
+                                <span class="check-icon password-x-icon"></span>
+                                <!-- 비밀번호 O 아이콘 -->
+                                <span class="check-icon password-o-icon"></span>
+                            </div>
+                            <div style="height: 40px;"></div>
+
+                            <button type="submit" data-select="submit" class="PMH0f FONGi _JKgP bHfaw bBcRu qz3Mr" style="margin-top: 10px;">
+                                <span class="ZTeRZ" role="textbox">가입하기</span>
+                            </button>
+                            <div style="display: flex; justify-content: space-between; padding-top: 20px;">
+                                <a href="../../sub/login/login.html" style="text-decoration: none;">로그인</a>
+                                <a href="../../main/main.html" style="text-decoration: none;">메인으로</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="tioRh" style="display:none; --modal-padding-value:70px"></div>
+</body>
+
+</html>
