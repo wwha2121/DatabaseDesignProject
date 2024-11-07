@@ -6,7 +6,7 @@
 
         <title>왓츄 컨텐츠 페이지</title>
 
-        <link rel="icon" href="../../img/icon/favicon.ico">
+        <link rel="icon" href="/img/icon/favicon.ico">
         <link rel="stylesheet" href="/css/contents.css">
         
         <script src="https://kit.fontawesome.com/068c802412.js" crossorigin="anonymous"></script>
@@ -67,12 +67,27 @@
                     </div>
                     <div class="gwA_f">
                         <ul class="VPOv3">
-                            <li><a type="button" data-select="login-button" class="PMH0f g1Qv3 QRZbL bBcRu G41oJ"
-                                    href="../login/login.html"><span class="ZTeRZ"
-                                                                     role="textbox">로그인</span></a></li>
-                            <li><a type="button" data-select="signup-button" class="PMH0f _JKgP QRZbL bBcRu G41oJ"
-                                    href="../sign_up/sign_up.html"><span class="ZTeRZ"
-                                                                         role="textbox">회원가입</span></a></li>
+                            <!-- 로그인/회원가입 버튼을 세션에 userEmail이 없을 때만 표시 -->
+                            <li th:if="${session.userEmail == null}">
+                                <a type="button" data-select="login-button" class="PMH0f g1Qv3 QRZbL bBcRu G41oJ" href="/login">
+                                    <span class="ZTeRZ" role="textbox">로그인</span>
+                                </a>
+                            </li>
+                            <li th:if="${session.userEmail == null}">
+                                <a type="button" data-select="signup-button" class="PMH0f _JKgP QRZbL bBcRu G41oJ" href="/sign_up">
+                                    <span class="ZTeRZ" role="textbox">회원가입</span>
+                                </a>
+                            </li>
+                            <!-- 로그인 후 이메일 표시 -->
+                            <li th:if="${session.userEmail != null}">
+                                <span class="user-email" th:text="'USER: ' + ${session.userEmail}" style="font-size: 23px; padding-top: 10px;padding-right: 15px;"></span>
+                            </li>
+                            <!-- 로그아웃 버튼 -->
+                            <li th:if="${session.userEmail != null}">
+                                <a type="button" data-select="signup-button" class="PMH0f _JKgP QRZbL bBcRu G41oJ" href="/logout">
+                                    <span class="ZTeRZ" role="textbox">로그아웃</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
