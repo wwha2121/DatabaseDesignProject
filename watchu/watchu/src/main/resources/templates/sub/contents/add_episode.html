@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에피소드 추가</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* 팝업 스타일 */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      font-size: 18px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+<h1>에피소드 추가</h1>
+<div class="form-container">
+  <form action="/add_episode" method="post">
+    <!-- 콘텐츠 선택 드롭다운 (Thymeleaf로 동적으로 데이터 채우기) -->
+    <label for="contents_id">콘텐츠 선택:</label>
+    <select id="contents_id" name="contentsId" required>
+      <option value="" disabled selected>콘텐츠 선택</option>
+      <!-- episodeContents 리스트에서 각 콘텐츠의 contentsId와 contentsName을 사용 -->
+      <th:block th:each="content : ${episodeContents}">
+        <option th:value="${content.contentsId}" th:text="${content.contentsId} + ' - ' + ${content.contentsName}"></option>
+      </th:block>
+    </select>
+
+    <!-- EPISODE 테이블 관련 필드들 -->
+    <label for="episode_name">에피소드 이름:</label>
+    <input type="text" id="episode_name" name="episodeName" required>
+
+    <label for="description">설명:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="episode_release">방영일:</label>
+    <input type="date" id="episode_release" name="episodeRelease" required>
+
+    <label for="episode_duration">에피소드 길이 (분):</label>
+    <input type="number" id="episode_duration" name="episodeDuration" required min="1">
+
+    <label for="episode_img_path">포스터 이미지 경로:</label>
+    <input type="text" id="episode_img_path" name="imgPath" required>
+
+    <label for="episode_video_path">영상 경로:</label>
+    <input type="text" id="episode_video_path" name="videoPath" required>
+
+    <label for="episode_views">조회수:</label>
+    <input type="number" id="episode_views" name="views" required min="0">
+
+    <button type="submit">에피소드 추가</button>
+  </form>
+</div>
+
+</body>
+</html>

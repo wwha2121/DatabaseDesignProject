@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콘텐츠 추가</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>콘텐츠 추가</h1>
+<div class="form-container">
+    <form action="/add_contents" method="post">
+        <label for="contents_category">카테고리:</label>
+        <select id="contents_category" name="contentsCategory" required>
+            <option value="" disabled selected>카테고리 선택</option>
+            <option value="MOVIE">영화</option>
+            <option value="SERIES">시리즈</option>
+            <option value="WEBTOON">웹툰</option>
+        </select>
+
+        <label for="contents_name">콘텐츠 이름:</label>
+        <input type="text" id="contents_name" name="contentsName" required>
+
+        <label for="contents_description">설명:</label>
+        <textarea id="contents_description" name="contentsDescription" rows="4" required></textarea>
+
+        <label for="contents_release">출시 연도:</label>
+        <input type="date" id="contents_release" name="contentsRelease" required>
+
+        <label for="contents_genre">장르:</label>
+        <select id="contents_genre" name="contentsGenre" required>
+            <option value="" disabled selected>장르 선택</option>
+            <option value="ACTION">액션</option>
+            <option value="COMEDY">코미디</option>
+            <option value="DRAMA">드라마</option>
+            <option value="SCIENCE_FICTION">공상과학</option>
+            <option value="ROMANCE">로맨스</option>
+            <option value="THRILLER">스릴러</option>
+            <option value="HORROR">공포</option>
+            <option value="ANIMATION">애니메이션</option>
+            <option value="CRIME">범죄</option>
+            <option value="FANTASY">판타지</option>
+            <option value="FAMILY">가족</option>
+            <option value="ADVENTURE">모험</option>
+            <option value="WAR">전쟁</option>
+            <option value="MUSIC">음악</option>
+            <option value="DOCUMENTARY">다큐멘터리</option>
+        </select>
+
+        <label for="contents_country">국가:</label>
+        <select id="contents_country" name="contentsCountry" required>
+            <option value="" disabled selected>국가 선택</option>
+            <option value="SOUTH_KOREA">한국</option>
+            <option value="UNITED_STATES">미국</option>
+            <option value="CANADA">캐나다</option>
+            <option value="UNITED_KINGDOM">영국</option>
+            <option value="GERMANY">독일</option>
+            <option value="FRANCE">프랑스</option>
+            <option value="JAPAN">일본</option>
+            <option value="CHINA">중국</option>
+            <option value="INDIA">인도</option>
+            <option value="AUSTRALIA">호주</option>
+            <option value="BRAZIL">브라질</option>
+            <option value="RUSSIA">러시아</option>
+            <option value="MEXICO">멕시코</option>
+            <option value="ITALY">이탈리아</option>
+            <option value="SPAIN">스페인</option>
+        </select>
+
+        <label for="contents_poster">포스터 이미지 URL:</label>
+        <input type="text" id="contents_poster" name="contentsPoster" required>
+
+        <button type="submit">콘텐츠 추가</button>
+    </form>
+</div>
+</body>
+</html>
