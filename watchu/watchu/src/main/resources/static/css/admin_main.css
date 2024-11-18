@@ -1,0 +1,282 @@
+.nav-container {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 2px 2px 2px #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.search-box-input {
+    padding: 5px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid lightgrey;
+    width: 150px;
+    transition: width 1s;
+}
+
+.search-box-input:focus {
+    width:300px;
+}
+
+.search-box-btn {
+    background-color: #343940;
+    color: white;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    height: 36px;
+    width: 40px;
+}
+
+.notification {
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.notification-icon {
+    font-size: x-large;
+    margin-left: 60px;
+    color: #808080;
+    margin-bottom: 20px;
+}
+
+.notification-badge {
+    position: relative;
+    left: 15px;
+    top: 16px;
+    background-color: #DC3545;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: small;
+    font-weight: 600;
+}
+
+#notification-name {
+    margin-left: 40px;
+    color: grey;
+}
+
+.ani-navbar {
+    background-color: #494CB4;
+    color: white;
+    width: 200px;
+    height: 100%;
+    padding: 25px;
+    position: fixed;
+    z-index: 5;
+    transition: all 1s;
+    text-align: center;
+    transform: translateX(-150px);
+}
+
+.ani-navbar:hover {
+    transform: translateX(0px);
+    transition: all 0.5s;
+}
+
+.ani-navbar-menu {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.ani-navbar-menu p {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.ani-navbar i {
+    transition: all 0.5s;
+    transform: translateX(125px);
+}
+
+.ani-navbar:hover i {
+    transform: translateX(0px);
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+th,
+td {
+    padding: 6px 15px;
+}
+th {
+    background: #42444e;
+    color: #fff;
+    text-align: left;
+}
+tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+}
+tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+}
+td {
+    border-right: 1px solid #c6c9cc;
+    border-bottom: 1px solid #c6c9cc;
+}
+td:first-child {
+    border-left: 1px solid #c6c9cc;
+}
+tr:nth-child(even) td {
+    background: #eaeaed;
+}
+tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+
+body {
+    color: #666;
+    font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.dropdown{
+    position : relative;
+    display : inline-block;
+}
+
+.dropbtn_icon{
+    font-family : 'Material Icons';
+}
+.dropbtn{
+    border : 1px solid rgb(37, 37, 37);
+    border-radius : 4px;
+    background-color: #f5f5f5;
+    font-weight: 400;
+    color : rgb(37, 37, 37);
+    padding : 12px;
+    width :200px;
+    text-align: left;
+    cursor : pointer;
+    font-size : 12px;
+}
+.dropdown-content{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    font-weight: 400;
+    background-color: #f9f9f9;
+    min-width : 200px;
+}
+
+.dropdown-content a{
+    display : block;
+    text-decoration : none;
+    color : rgb(37, 37, 37);
+    font-size: 12px;
+    padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+    background-color : #ececec
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+/* 부모 div를 flex 컨테이너로 설정 */
+.header-button {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: space-between; /* 양 끝 정렬 */
+}
+
+/* 드롭다운 버튼 스타일 */
+.dropdown {
+    display: inline-block; /* 드롭다운을 라인 내에서 정렬 */
+    position: relative; /* 드롭다운 콘텐츠의 위치 지정 */
+}
+
+.dropbtn {
+    background-color: #494CB4; /* 버튼 배경색 */
+    color: white; /* 버튼 글자색 */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 160px;
+    margin: 0;
+}
+
+/* 드롭다운 내용 숨기기 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+    padding: 10px 20px;
+}
+
+/* 드롭다운 버튼에 마우스 올리면 내용 표시 */
+.dropdown:hover .dropdown-content {
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a{
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+/* Center the form container on the screen */
+.admin_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust based on desired spacing */
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Width of the form */
+}
+
+/* Center the form fields and apply styling */
+.admin_input form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.admin_input input[type="text"],
+.admin_input input[type="password"],
+.admin_input input[type="date"],
+.admin_input input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.admin_input input[type="submit"]{
+    background-color: #494CB4;
+    color: white;
+}
+
+.date.admin_input .admin_sex {
+    display: flex;
+    gap: 10px;
+}
+
+span{
+    width: 300px;
+}
+
+.admin_input input[type="date"]{
+    width: 187px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
