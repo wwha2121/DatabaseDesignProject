@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>회원 조회</title>
+  <link rel="stylesheet" href="../../static/css/admin_main.css">
+</head>
+<body>
+<nav class="nav-container">
+  <div class="search-box">
+    <input type="text" class="search-box-input" placeholder="Search" />
+    <button class="search-box-btn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+
+  <div class="notification">
+    <div class="notification-icon">
+      <span class="notification-badge">5</span>
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="notification-icon">
+      <span class="notification-badge">9</span>
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <span id="notification-name">Hyewon Shin</span>
+  </div>
+</nav>
+<nav class="ani-navbar">
+  <div class="ani-navbar-menu">
+    <i class="fa-solid fa-house ani-navbar-menu__icon"></i>
+    <p>Home</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-headphones"></i>
+    <p>컨텐츠 추가</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-flag"></i>
+    <p>영화 추가</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-chart-pie"></i>
+    <p>시리즈 추가</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-chart-pie"></i>
+    <p>관리자 등록</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-chart-pie"></i>
+    <p>관리자 조회</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-chart-pie"></i>
+    <p>회원 조회</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-chart-pie"></i>
+    <p>로그인</p>
+  </div>
+  <div class="ani-navbar-menu ani-navbar-menu__icon">
+    <i class="fa-solid fa-chart-pie"></i>
+    <p>Watchu 페이지</p>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="box">
+      <div class="header-button">
+        <h2>회원조회</h2>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span class="dropbtn_icon">정렬</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">id</a>
+            <a href="#">이름</a>
+            <a href="#">생년월일</a>
+            <a href="#">구독번호</a>
+          </div>
+        </div>
+      </div>
+      <div id="collapse4" class="body">
+        <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>이름</th>
+            <th>사용자 닉네임</th>
+            <th>생년월일</th>
+            <th>성별</th>
+            <th>Email</th>
+            <th>전화번호</th>
+            <th>구독번호</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>member1</td>
+            <td>홍길동</td>
+            <td>길동입니다</td>
+            <td>1999-09-09</td>
+            <td>남</td>
+            <td>kifn@gmail.com</td>
+            <td>010-0999-09999</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>member2</td>
+            <td>춘향</td>
+            <td>춘향입니다</td>
+            <td>1998-08-08</td>
+            <td>여</td>
+            <td>kifn@gmail.com</td>
+            <td>010-0899-09899</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>member2</td>
+            <td>춘향</td>
+            <td>춘향입니다</td>
+            <td>1998-08-08</td>
+            <td>여</td>
+            <td>kifn@gmail.com</td>
+            <td>010-0899-09899</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>member2</td>
+            <td>춘향</td>
+            <td>춘향입니다</td>
+            <td>1998-08-08</td>
+            <td>여</td>
+            <td>kifn@gmail.com</td>
+            <td>010-0899-09899</td>
+            <td>2</td>
+          </tr>
+
+
+
+          </tbody>                </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
