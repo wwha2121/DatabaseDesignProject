@@ -30,6 +30,7 @@ public class LoginController {
         if (loginService.authenticate(loginDTO)) {
             // 로그인 성공 시 세션에 이메일 저장
             session.setAttribute("userEmail", loginDTO.getEmail());
+            session.setAttribute("userId", loginDTO.getId());  // 유저 아이디 추가 저장
             return "redirect:/main"; // 로그인 후 메인 페이지로 리디렉션
         }else {
             // 로그인 실패 시, 로그인 페이지로 다시 돌아가서 오류 메시지를 보여줌

@@ -24,15 +24,27 @@
             <section class="pCA8j">
                 <ul aria-label="" class="EdiMU">
                     <li class="bXT_X">
-                        <a class="bzg0x Zcvzh" href="">
+                        <a class="bzg0x Zcvzh" id="subscribe-button">
                             <div class="z9hr7"><i class="fa-solid fa-e"></i></div>
-                            구독
+                            구독 등록
                         </a>
                     </li>
+                    <!-- 구독 입력창 (초기에는 숨겨둠) -->
                     <li class="bXT_X">
-                        <a class="bzg0x Zcvzh" href="">
+                        <div id="subscribe-input" style="display: none; margin-left: 10px;"> <!-- 왼쪽 여백 5px 추가 -->
+                            <label for="subscription-id" style="font-size: 14px; font-weight: bold; display: block;">구독 ID:</label>
+                            <input type="text" id="subscription-id" placeholder="구독 ID를 입력하세요"
+                                   style="padding: 6px; margin-right: 1px; border-radius: 5px; border: 1px solid #ccc; width: 150px; font-size: 8px;">
+                            <button id="submit-subscription"
+                                    style="padding: 6px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 8px;">
+                                제출
+                            </button>
+                        </div>
+                    </li>
+                    <li class="bXT_X">
+                        <a class="bzg0x Zcvzh" href="/subscription">
                             <div class="z9hr7"><i class="fa-solid fa-bag-shopping"></i></div>
-                            개별 구매
+                            구독 신청
                         </a>
                     </li>
                     <li class="bXT_X"></li>
@@ -316,6 +328,28 @@
                     }, 3000);  // 3초 뒤에 사라짐
                 }
             });
+
+            // 구독 버튼 클릭 시 입력창 보이기
+            document.getElementById('subscribe-button').addEventListener('click', function() {
+                var subscribeInput = document.getElementById('subscribe-input');
+                if (subscribeInput.style.display === 'none') {
+                    subscribeInput.style.display = 'block';  // 입력창 보이기
+                } else {
+                    subscribeInput.style.display = 'none';  // 입력창 숨기기
+                }
+            });
+
+            // 구독 제출 버튼 클릭 시 처리
+            document.getElementById('submit-subscription').addEventListener('click', function() {
+                var subscriptionId = document.getElementById('subscription-id').value;
+                if (subscriptionId) {
+                    alert('구독 ID: ' + subscriptionId + '로 구독되었습니다.');
+                    // 구독 요청을 서버로 전송하는 코드 추가 가능
+                } else {
+                    alert('구독 ID를 입력해주세요.');
+                }
+            });
+
         </script>
     </div>
 </div>

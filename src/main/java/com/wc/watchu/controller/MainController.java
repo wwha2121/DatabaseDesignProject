@@ -39,4 +39,6 @@ public class MainController {
 
         return "main/main"; // main.html을 반환
     }
+
+
 }

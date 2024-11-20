@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구독 추가</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<h1>구독 추가</h1>
+<div class="form-container">
+  <form action="/subscription" method="post">
+    <label for="sub_state">구독 상태:</label>
+    <select id="sub_state" name="subState" required>
+      <option value="" disabled selected>구독 상태 선택</option>
+      <option value="SUB">SUB</option>
+      <option value="NONSUB">NONSUB</option>
+    </select>
+
+    <label for="sub_type">구독 유형:</label>
+    <select id="sub_type" name="subType" required>
+      <option value="" disabled selected>구독 유형 선택</option>
+      <option value="SINGLE">SINGLE</option>
+      <option value="GROUP">GROUP</option>
+    </select>
+
+    <label for="sub_max">최대 수:</label>
+    <input type="number" id="sub_max" name="subMax" required min="1">
+
+    <label for="sub_period">구독 기간:</label>
+    <input type="date" id="sub_period" name="subPeriod" required>
+
+    <button type="submit">구독 추가</button>
+  </form>
+</div>
+</body>
+</html>
+

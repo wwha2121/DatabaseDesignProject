@@ -1,3 +1,36 @@
+#subscribe-input {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#subscribe-input label {
+    font-size: 5px; /* "구독 ID:" 텍스트 크기 줄임 */
+    font-weight: bold;
+}
+
+#subscribe-input input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+#subscribe-input button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#subscribe-input button:hover {
+    background-color: #45a049;
+}
+
+
 .error-message {
     position: fixed;
     top: 20px;
