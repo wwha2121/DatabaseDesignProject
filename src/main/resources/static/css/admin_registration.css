@@ -1,0 +1,66 @@
+/* 폼 컨테이너를 화면 가운데에 배치 */
+.admin_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh; /* 더 많은 세로 공간을 확보 */
+    margin: auto;
+    padding: 30px; /* 폼 주변에 더 넉넉한 여백 추가 */
+    border-radius: 12px; /* 테두리 둥글기를 조금 더 크게 */
+    width: 350px; /* 폼의 너비를 더 넓게 */
+}
+
+/* 폼 필드들을 가운데 정렬하고 스타일 적용 */
+.admin_input form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* 필드 간 간격을 조금 더 넓힘 */
+    width: 100%;
+}
+
+.admin_input select,
+.admin_input select option {
+    font-size: 20px; /* 옵션의 폰트 크기 키우기 */
+}
+
+/* 입력 필드 스타일 */
+.admin_input input[type="text"],
+.admin_input input[type="password"],
+.admin_input input[type="contents_id"],
+.admin_input input[type="date"],
+.admin_input input[type="submit"] {
+    padding: 12px; /* 입력 필드에 여백을 더 크게 */
+    border: 1px solid #ddd;
+    border-radius: 6px; /* 입력 필드 테두리 둥글게 */
+    font-size: 16px; /* 폰트 크기 좀 더 크게 */
+}
+
+/* 제출 버튼 스타일 */
+.admin_input input[type="submit"] {
+    background-color: #494CB4;
+    color: white;
+    font-size: 16px; /* 버튼 폰트 크기도 키움 */
+}
+
+/* 날짜 입력 필드 스타일 */
+.date.admin_input .admin_sex {
+    display: flex;
+    gap: 12px; /* 선택 옵션 간 간격을 넓힘 */
+}
+
+span {
+    width: 350px; /* span의 너비를 폼 너비에 맞게 조정 */
+}
+
+/* 날짜 입력 필드의 너비 */
+.admin_input input[type="date"] {
+    width: 200px; /* 날짜 필드 너비를 더 넓게 */
+}
+
+
+
+
+
+
+
+

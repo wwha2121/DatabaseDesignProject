@@ -1,112 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>계약 등록</title>
-  <link rel="stylesheet" href="../../static/css/admin_registraion.css">
-  <link rel="stylesheet" href="../../static/css/admin.css">
+    <meta charset="UTF-8">
+    <title>계약 등록</title>
+    <link rel="stylesheet" href="/css/admin_registration.css">
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
 <nav class="nav-container">
-  <div class="search-box">
-    <input type="text" class="search-box-input" placeholder="Search" />
-    <button class="search-box-btn">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </div>
+    <div class="search-box">
+        <img src="/img/logo.png" alt="로고" style="width: 10%; height: auto;"/>
+        <input type="text" class="search-box-input" placeholder="Search"/>
+    </div>
 
-  <div class="notification">
-    <div class="notification-icon">
-      <span class="notification-badge">5</span>
-      <i class="fa-solid fa-bell"></i>
+    <div class="notification">
+        <button>
+            로그인
+        </button>
     </div>
-    <div class="notification-icon">
-      <span class="notification-badge">9</span>
-      <i class="fa-solid fa-envelope"></i>
-    </div>
-    <span id="notification-name">Hyewon Shin</span>
-  </div>
 </nav>
 <nav class="ani-navbar">
-  <div class="ani-navbar-menu">
-    <i class="fa-solid fa-house ani-navbar-menu__icon"></i>
-    <p>Home</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>컨텐츠 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>계약 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-flag"></i>
-    <p>영화 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>시리즈 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>배우 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>감독 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>관리자 등록</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>관리자 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>계약 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>배우 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>감독 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>멤버 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>로그인</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>Watchu 페이지</p>
-  </div>
+    <div class="ani-navbar-menu">
+        <i class="fa-solid fa-house ani-navbar-menu__icon"></i>
+        <p>Home</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>컨텐츠 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>계약 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-flag"></i>
+        <p>영화 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>시리즈 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>배우 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>감독 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>관리자 등록</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>관리자 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>계약 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>배우 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>감독 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>멤버 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>로그인</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>Watchu 페이지</p>
+    </div>
 </nav>
 <div class="admin_input">
-  <form method="post" action="서버의url" id="admin-form">
-    <input type="text" name="contents_id" placeholder="컨텐츠Id">
-    <div class="date">
-      <span>계약시작: </span>
-    <input type="date" name="contract_start" >
+    <form method="post" action="/contract_registration" id="admin-form">
+        <!-- 콘텐츠 선택 드롭다운 (Thymeleaf로 동적으로 데이터 채우기) -->
+        <label for="contents_id">콘텐츠 선택:</label>
+        <select id="contents_id" name="contentsId" required>
+            <option value="" disabled selected>콘텐츠 선택</option>
+
+            <!-- 모든 콘텐츠 -->
+            <th:block th:each="content : ${allContents}">
+                <option th:value="${content.contentsId}" th:text="${content.contentsId} + ' - ' + ${content.contentsName}"></option>
+            </th:block>
+        </select>
+        <div class="date">
+            <span>계약시작: </span>
+            <input type="date" id="contents_start" name="contractStart">
+        </div>
+        <div class="date">
+            <span>계약종료: </span>
+            <input type="date" id="contents_end" name="contractEnd">
+        </div>
+        <div>
+            <span>계약금: </span>
+            <input type="text" id="contents_price" name="contractPrice" placeholder="계약금">
+            <span>만원</span>
+        </div>
+        <!-- contents_date (자동으로 계산되어 추가됨) -->
+        <div>
+            <span>계약기간: </span>
+            <input type="text" id="contents_date" name="contractDate">
+            <span>일</span>
+        </div>
+
+        <input type="submit" value="저장">
+    </form>
 </div>
-    <div class="date">
-      <span>계약종료: </span>
-      <input type="date" name="contract_end">
-    </div>
-    <input type="text" name="Field" placeholder="계약금">
-    <div class="date">
-      <span>계약기간: </span>
-      <input type="date" name="contract_end">
-    </div>
-    <input type="submit" value="저장">
-  </form>
-</div>
+<script>
+    // 계약 시작일과 종료일을 입력받는 필드
+    const contentsStart = document.getElementById('contents_start');
+    const contentsEnd = document.getElementById('contents_end');
+    const contentsDateInput = document.getElementById('contents_date');
+
+    // 날짜 계산을 위한 함수
+    function calculateContractDate() {
+        // 계약 시작일과 종료일이 모두 선택되었을 때만 실행
+        if (contentsStart.value && contentsEnd.value) {
+            const startDate = new Date(contentsStart.value);
+            const endDate = new Date(contentsEnd.value);
+
+            // 종료일에서 시작일을 빼고, 그 차이를 일(day) 단위로 계산
+            const timeDifference = endDate - startDate;
+            const daysDifference = timeDifference / (1000 * 3600 * 24); // 밀리초를 일로 변환
+
+            // 계산된 날짜 차이를 contents_date 필드에 입력
+            contentsDateInput.value = daysDifference;
+        }
+    }
+
+    // 계약 시작일이나 종료일이 변경될 때마다 계산 함수 실행
+    contentsStart.addEventListener('change', calculateContractDate);
+    contentsEnd.addEventListener('change', calculateContractDate);
+</script>
 </body>
 </html>

@@ -14,4 +14,7 @@ public interface ContentsRepository extends JpaRepository<ContentsEntity, Long>
 
     // 콘텐츠 ID로 단일 콘텐츠 조회
     ContentsEntity findByContentsId(Long contentsId);
+
+    // 모든 콘텐츠를 조회 (카테고리 구분 없이)
+    List<ContentsEntity> findAllByOrderByContentsIdDesc(); // 새로운 메서드 추가
 }
