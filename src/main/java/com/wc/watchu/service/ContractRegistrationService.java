@@ -20,4 +20,13 @@ public class ContractRegistrationService {
         // ContractEntity를 데이터베이스에 저장
         contractRepository.save(contractEntity);
     }
+
+    public boolean deleteContractById(Long contractId) {
+        if (contractRepository.existsById(contractId)) {
+            contractRepository.deleteById(contractId);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

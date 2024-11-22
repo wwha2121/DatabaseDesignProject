@@ -1,170 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>계약 조회</title>
-  <link rel="stylesheet" href="../../static/css/admin_main.css">
+    <meta charset="UTF-8">
+    <title>계약 조회</title>
+    <link rel="stylesheet" href="/css/admin_main.css">
 </head>
 <body>
 <nav class="nav-container">
-  <div class="search-box">
-    <input type="text" class="search-box-input" placeholder="Search" />
-    <button class="search-box-btn">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </div>
-
-  <div class="notification">
-    <div class="notification-icon">
-      <span class="notification-badge">5</span>
-      <i class="fa-solid fa-bell"></i>
+    <div class="search-box">
+        <img src="/img/logo.png" alt="로고" style="width: 10%; height: auto;"/>
+        <input type="text" class="search-box-input" placeholder="Search"/>
     </div>
-    <div class="notification-icon">
-      <span class="notification-badge">9</span>
-      <i class="fa-solid fa-envelope"></i>
+    <div class="notification">
+        <span id="notification-name">관리자 이름</span>
     </div>
-    <span id="notification-name">Hyewon Shin</span>
-  </div>
 </nav>
 <nav class="ani-navbar">
-  <div class="ani-navbar-menu">
-    <i class="fa-solid fa-house ani-navbar-menu__icon"></i>
-    <p>Home</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>컨텐츠 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>계약 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-flag"></i>
-    <p>영화 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>시리즈 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>배우 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>감독 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>관리자 등록</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>관리자 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>계약 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>배우 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>감독 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>멤버 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>로그인</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>Watchu 페이지</p>
-  </div>
+    <div class="ani-navbar-menu">
+        <a href="/admin_main">
+            <i class="fa-solid fa-headphones"></i>
+            <p>HOME</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/add_contents">
+            <i class="fa-solid fa-headphones"></i>
+            <p>컨텐츠 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/contract_registration">
+            <i class="fa-solid fa-headphones"></i>
+            <p>계약 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/add_movie">
+            <i class="fa-solid fa-headphones"></i>
+            <p>영화 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/add_episode">
+            <i class="fa-solid fa-headphones"></i>
+            <p>시리즈 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>배우 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>감독 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>관리자 등록</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>관리자 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/contract_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>계약 조회</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>배우 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>감독 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>멤버 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>로그인</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>Watchu 페이지</p>
+    </div>
 </nav>
 <div class="row">
-  <div class="col-lg-12">
-    <div class="box">
-      <div class="header-button">
-        <h2>계약조회</h2>
-        <div class="dropdown">
-          <button class="dropbtn">
-            <span class="dropbtn_icon">정렬</span>
-          </button>
-          <div class="dropdown-content">
-            <a href="#">등록번호</a>
-            <a href="#">계약시작</a>
-            <a href="#">계약종료</a>
-            <a href="#">계약금</a>
-            <a href="#">관리자</a>
-          </div>
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="header-button">
+                <h2>계약조회</h2>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <span class="dropbtn_icon">정렬</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">등록번호</a>
+                        <a href="#">계약시작</a>
+                        <a href="#">계약종료</a>
+                        <a href="#">계약금</a>
+                        <a href="#">관리자</a>
+                    </div>
+                </div>
+            </div>
+            <div id="collapse4" class="body">
+                <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>계약 ID</th>
+                        <th>컨텐츠 ID</th>
+                        <th>이름</th>
+                        <th>사진</th>
+                        <th>계약시작</th>
+                        <th>계약종료</th>
+                        <th>계약금(만원)</th>
+                        <th>계약기간(일)</th>
+                        <th>관리자</th>
+                        <th>삭제</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- 계약 데이터 반복 출력 -->
+                    <tr th:each="contract : ${contractList}">
+                        <td th:text="${contract.contractId}">계약번호</td>
+                        <td th:text="${contract.contentsId}">컨텐츠번호</td>
+                        <td th:text="${contract.contents.contentsName}">컨텐츠이름</td> <!-- 컨텐츠 이름 -->
+                        <td>
+                            <img th:src="@{${contract.contents.contentsPoster}}" alt="Poster" class="content-poster" width="100" height="auto"/>
+                        </td>
+                        <td th:text="${contract.contractStart}">계약시작</td>
+                        <td th:text="${contract.contractEnd}">계약종료</td>
+                        <td th:text="${contract.contractPrice}">계약금</td>
+                        <td th:text="${contract.contractDate}">계약기간</td>
+                        <td th:text="${contract.adminId}">관리자</td>
+                        <!-- 삭제 버튼 추가 -->
+                        <td>
+                            <!-- 삭제 버튼 -->
+                            <button class="btn btn-danger" th:data-contract-id="${contract.contractId}" onclick="deleteContract(this)">
+                                삭제
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
-      <div id="collapse4" class="body">
-        <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
-          <thead>
-          <tr>
-            <th>컨텐츠 등록번호</th>
-            <th>계약시작</th>
-            <th>계약종료</th>
-            <th>계약금(만원)</th>
-            <th>계약기간</th>
-            <th>관리자</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>cjsjdnf01</td>
-            <td>2023-02-02</td>
-            <td>2029-09-08</td>
-            <td>800</td>
-            <td>2029-09-08</td>
-            <td>admin1</td>
-          <tr>
-            <td>asdfsda2</td>
-            <td>2021-02-08</td>
-            <td>2030-09-08</td>
-            <td>1000</td>
-            <td>2037-09-08</td>
-            <td>admin2</td>
-          </tr>
-          <tr>
-            <td>asdfsda2</td>
-            <td>2021-02-08</td>
-            <td>2030-09-08</td>
-            <td>1000</td>
-            <td>2037-09-08</td>
-            <td>admin2</td>
-          </tr>
-          <tr>
-            <td>asdfsda2</td>
-            <td>2021-02-08</td>
-            <td>2030-09-08</td>
-            <td>1000</td>
-            <td>2037-09-08</td>
-            <td>admin2</td>
-          </tr>
-          <tr>
-            <td>asdfsda2</td>
-            <td>2021-02-08</td>
-            <td>2030-09-08</td>
-            <td>1000</td>
-            <td>2037-09-08</td>
-            <td>admin2</td>
-          </tr>
-
-
-          </tbody>                </table>
-      </div>
     </div>
-  </div>
 </div>
-
+<script>
+    function deleteContract(button) {
+        const contractId = button.getAttribute('data-contract-id');
+        if (confirm("정말로 이 계약을 삭제하시겠습니까?")) {
+            fetch(`/contract_read/delete/${contractId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert("계약이 삭제되었습니다.");
+                        button.closest('tr').remove();
+                    } else {
+                        alert("계약 삭제에 실패했습니다.");
+                    }
+                })
+                .catch(error => {
+                    console.error('삭제 중 오류 발생:', error);
+                    alert("삭제 요청 중 오류가 발생했습니다.");
+                });
+        }
+    }
+</script>
 </body>
 </html>

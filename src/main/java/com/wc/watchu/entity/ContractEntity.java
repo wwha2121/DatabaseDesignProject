@@ -28,8 +28,12 @@ public class ContractEntity {
     @Column
     private Long contractDate; // 계약 날짜
 
-    @Column
+    @Column(name = "contents_id") // 이 컬럼은 외래 키로 사용될 것입니다.
     private Long contentsId; // 콘텐츠 ID (외래 키 제약조건 없이 단순 ID 참조)
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "contents_id", referencedColumnName = "contentsId", insertable = false, updatable = false)
+    private ContentsEntity contents; // ContentsEntity와의 관계
 
     @Column
     private Long adminId; // 관리자 ID (외래 키 제약조건 없이 단순 ID 참조)
