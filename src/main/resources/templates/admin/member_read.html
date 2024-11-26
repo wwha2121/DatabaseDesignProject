@@ -1,172 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>회원 조회</title>
-  <link rel="stylesheet" href="../../static/css/admin_main.css">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <title>회원 조회</title>
+    <link rel="stylesheet" href="/css/admin_main.css">
+</head><body>
 <nav class="nav-container">
-  <div class="search-box">
-    <input type="text" class="search-box-input" placeholder="Search" />
-    <button class="search-box-btn">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </div>
-
-  <div class="notification">
-    <div class="notification-icon">
-      <span class="notification-badge">5</span>
-      <i class="fa-solid fa-bell"></i>
+    <div class="search-box">
+        <img src="/img/logo.png" alt="로고" style="width: 10%; height: auto;"/>
+        <input type="text" class="search-box-input" placeholder="Search"/>
     </div>
-    <div class="notification-icon">
-      <span class="notification-badge">9</span>
-      <i class="fa-solid fa-envelope"></i>
+    <div class="notification">
+        <span id="notification-name">관리자 이름</span>
     </div>
-    <span id="notification-name">Hyewon Shin</span>
-  </div>
 </nav>
 <nav class="ani-navbar">
-  <div class="ani-navbar-menu">
-    <i class="fa-solid fa-house ani-navbar-menu__icon"></i>
-    <p>Home</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>컨텐츠 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>계약 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-flag"></i>
-    <p>영화 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>시리즈 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>배우 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-headphones"></i>
-    <p>감독 추가</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>관리자 등록</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>관리자 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>계약 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>배우 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>감독 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>멤버 조회</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>로그인</p>
-  </div>
-  <div class="ani-navbar-menu ani-navbar-menu__icon">
-    <i class="fa-solid fa-chart-pie"></i>
-    <p>Watchu 페이지</p>
-  </div>
+    <div class="ani-navbar-menu">
+        <a href="/admin_main">
+            <i class="fa-solid fa-headphones"></i>
+            <p>HOME</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/add_contents">
+            <i class="fa-solid fa-headphones"></i>
+            <p>컨텐츠 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/contract_registration">
+            <i class="fa-solid fa-headphones"></i>
+            <p>계약 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/add_movie">
+            <i class="fa-solid fa-headphones"></i>
+            <p>영화 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/add_episode">
+            <i class="fa-solid fa-headphones"></i>
+            <p>시리즈 추가</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>배우 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-headphones"></i>
+        <p>감독 추가</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>관리자 등록</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>관리자 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/contract_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>계약 조회</p>
+        </a>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>배우 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>감독 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>멤버 조회</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>로그인</p>
+    </div>
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <i class="fa-solid fa-chart-pie"></i>
+        <p>Watchu 페이지</p>
+    </div>
 </nav>
 <div class="row">
-  <div class="col-lg-12">
-    <div class="box">
-      <div class="header-button">
-        <h2>회원조회</h2>
-        <div class="dropdown">
-          <button class="dropbtn">
-            <span class="dropbtn_icon">정렬</span>
-          </button>
-          <div class="dropdown-content">
-            <a href="#">id</a>
-            <a href="#">이름</a>
-            <a href="#">생년월일</a>
-            <a href="#">구독번호</a>
-          </div>
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="header-button">
+                <h2>회원조회</h2>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <span class="dropbtn_icon">정렬</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">id</a>
+                        <a href="#">이름</a>
+                        <a href="#">생년월일</a>
+                        <a href="#">이메일</a>
+                    </div>
+                </div>
+            </div>
+            <div id="collapse4" class="body">
+                <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>이름</th>
+                        <th>생년월일</th>
+                        <th>성별</th>
+                        <th>Email</th>
+                        <th>비밀번호</th>
+                        <th>삭제</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- 회원 데이터 반복 출력 -->
+                    <tr th:each="signUp : ${signUpList}">
+                        <td th:text="${signUp.memberId}">회원 ID</td>
+                        <td th:text="${signUp.memberName}">회원 이름</td>
+                        <td th:text="${signUp.birthday}">생일</td>
+                        <td th:text="${signUp.sex}">성별</td>
+                        <td th:text="${signUp.email}">이메일</td>
+                        <td th:text="${signUp.password}">비밀번호</td>
+                        <!-- 삭제 버튼 추가 -->
+                        <td>
+                            <!-- 삭제 버튼 -->
+                            <button class="btn btn-danger" th:data-contract-id="${signUp.memberId}" onclick="deleteContract(this)">
+                                삭제
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
-      <div id="collapse4" class="body">
-        <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
-          <thead>
-          <tr>
-            <th>Id</th>
-            <th>이름</th>
-            <th>사용자 닉네임</th>
-            <th>생년월일</th>
-            <th>성별</th>
-            <th>Email</th>
-            <th>전화번호</th>
-            <th>구독번호</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>member1</td>
-            <td>홍길동</td>
-            <td>길동입니다</td>
-            <td>1999-09-09</td>
-            <td>남</td>
-            <td>kifn@gmail.com</td>
-            <td>010-0999-09999</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>member2</td>
-            <td>춘향</td>
-            <td>춘향입니다</td>
-            <td>1998-08-08</td>
-            <td>여</td>
-            <td>kifn@gmail.com</td>
-            <td>010-0899-09899</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>member2</td>
-            <td>춘향</td>
-            <td>춘향입니다</td>
-            <td>1998-08-08</td>
-            <td>여</td>
-            <td>kifn@gmail.com</td>
-            <td>010-0899-09899</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>member2</td>
-            <td>춘향</td>
-            <td>춘향입니다</td>
-            <td>1998-08-08</td>
-            <td>여</td>
-            <td>kifn@gmail.com</td>
-            <td>010-0899-09899</td>
-            <td>2</td>
-          </tr>
-
-
-
-          </tbody>                </table>
-      </div>
     </div>
-  </div>
 </div>
 
 </body>
