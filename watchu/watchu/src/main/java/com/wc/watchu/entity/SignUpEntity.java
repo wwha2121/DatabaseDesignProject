@@ -11,9 +11,10 @@ import java.sql.Date;
 @NoArgsConstructor
 @Table(name = "member")
 public class SignUpEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long memberId;
+    private int memberId;
 
     @Column(nullable = false, length = 100)
     private String memberName;

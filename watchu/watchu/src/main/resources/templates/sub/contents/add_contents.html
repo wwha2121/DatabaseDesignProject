@@ -48,7 +48,8 @@
 <body>
 <h1>콘텐츠 추가</h1>
 <div class="form-container">
-    <form action="/add_contents" method="post">
+    <form id="contents-form">
+        <!-- 콘텐츠 입력 -->
         <label for="contents_category">카테고리:</label>
         <select id="contents_category" name="contentsCategory" required>
             <option value="" disabled selected>카테고리 선택</option>
@@ -109,8 +110,76 @@
         <label for="contents_poster">포스터 이미지 URL:</label>
         <input type="text" id="contents_poster" name="contentsPoster" required>
 
-        <button type="submit">콘텐츠 추가</button>
+        <!-- 비디오 입력 -->
+        <label for="video_path">관련 비디오 경로 (URL):</label>
+        <input type="text" id="video_path" name="videoPath">
+
+        <label for="video_description">비디오 설명:</label>
+        <textarea id="video_description" name="videoDescription" rows="2"></textarea>
+
+        <button type="button" id="submit-button">콘텐츠 추가</button>
     </form>
 </div>
+
+<script>
+    document.getElementById("submit-button").addEventListener("click", function (event) {
+        event.preventDefault();
+
+        // 콘텐츠 데이터 수집
+        const contentsDTO = {
+            contentsCategory: document.getElementById("contents_category").value,
+            contentsName: document.getElementById("contents_name").value,
+            contentsDescription: document.getElementById("contents_description").value,
+            contentsRelease: document.getElementById("contents_release").value,
+            contentsGenre: document.getElementById("contents_genre").value,
+            contentsCountry: document.getElementById("contents_country").value,
+            contentsPoster: document.getElementById("contents_poster").value
+        };
+
+        // 관련 비디오 데이터 수집
+        const relatedVideoDTO = {
+            videoPath: document.getElementById("video_path").value,
+            description: document.getElementById("video_description").value
+        };
+
+        // 서버로 데이터 전송
+        fetch("/add_contents", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                contentsDTO: {
+                    contentsCategory: document.getElementById("contents_category").value,
+                    contentsName: document.getElementById("contents_name").value,
+                    contentsDescription: document.getElementById("contents_description").value,
+                    contentsRelease: document.getElementById("contents_release").value,
+                    contentsGenre: document.getElementById("contents_genre").value,
+                    contentsCountry: document.getElementById("contents_country").value,
+                    contentsPoster: document.getElementById("contents_poster").value
+                },
+                relatedVideoDTO: {
+                    videoPath: document.getElementById("video_path").value,
+                    description: document.getElementById("video_description").value
+                }
+            })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP error " + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert("콘텐츠가 성공적으로 추가되었습니다!");
+                console.log("Response Data:", data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("콘텐츠 추가 중 오류가 발생했습니다.");
+            });
+
+    });
+</script>
 </body>
 </html>

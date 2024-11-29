@@ -15,7 +15,7 @@ public class MovieEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long movieId; // 영화 ID (자동 증가)
+    private int movieId; // 영화 ID (자동 증가)
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "contents_id") // 외래키
@@ -33,11 +33,11 @@ public class MovieEntity {
     @Column
     private int views; // 조회수
 
-    public Long getContentsId() {
-        if (content != null) {
+    public int getContentsId() {
+//        if (content != null) {
             return content.getContentsId(); // ContentsEntity의 contentsId를 반환
-        }
-        return null; // content가 없으면 null 반환
+//    }
+//        return null; // content가 없으면 null 반환
     }
 
     @Builder
