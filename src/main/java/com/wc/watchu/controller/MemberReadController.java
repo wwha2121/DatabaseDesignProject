@@ -44,7 +44,7 @@ public class MemberReadController {
 
     // 회원 삭제 기능 (옵션, 필요시 구현)
     @DeleteMapping("/member_read/delete/{memberId}")
-    public ResponseEntity<Void> deleteMember(@PathVariable Long memberId) {
+    public ResponseEntity<Void> deleteMember(@PathVariable int memberId) {
         boolean deleted = memberService.deleteMemberById(memberId);
         if (deleted) {
             return ResponseEntity.ok().build();

@@ -10,7 +10,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @ToString
 public class ContentsDTO {
-    private Long contentsId; // 콘텐츠 ID
+    private int contentsId; // 콘텐츠 ID
     private String contentsCategory; // 콘텐츠 카테고리
     private String contentsName; // 콘텐츠 이름
     private String contentsDescription; // 콘텐츠 설명

@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class MovieDTO {
-    private Long movieId; // 영화 ID
-    private Long contentsId; // 콘텐츠 ID (ForeignKey)
+    private int movieId; // 영화 ID
+    private int contentsId; // 콘텐츠 ID (ForeignKey)
     private int movieDuration; // 영화 길이 (분)
     private String movieImgPath; // 포스터 이미지 경로
     private String movieVideoPath; // 영상 경로

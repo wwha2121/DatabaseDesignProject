@@ -12,7 +12,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @ToString
 public class SignUpDTO {
-    private Long memberId;
+    private int memberId;
     private String memberName; // 회원 이름
     private Date birthday; // 생일
     private SexEnum sex; // 성별

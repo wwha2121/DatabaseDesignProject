@@ -11,7 +11,7 @@ public class MemberService {
     private SignUpRepository signUpRepository;
 
     // Example method to delete a member
-    public boolean deleteMemberById(Long memberId) {
+    public boolean deleteMemberById(int memberId) {
         if (signUpRepository.existsById(memberId)) {
             signUpRepository.deleteById(memberId);
             return true;

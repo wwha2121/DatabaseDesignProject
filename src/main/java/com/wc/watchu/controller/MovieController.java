@@ -33,7 +33,7 @@ public class MovieController {
     }
 
     @GetMapping("/movie/{contentsId}")
-    public String getMoviesByContent(@PathVariable("contentsId") Long contentsId, Model model) {
+    public String getMoviesByContent(@PathVariable("contentsId") int contentsId, Model model) {
         List<MovieDTO> movies = movieService.getMoviesByContent(contentsId);
         model.addAttribute("movies", movies);
         return "sub/contents/movie"; // 영화 목록을 표시할 템플릿 이름

@@ -5,7 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SignUpRepository extends JpaRepository<SignUpEntity, Long>
+public interface SignUpRepository extends JpaRepository<SignUpEntity, Integer>
 {
     SignUpEntity findByEmail(String email);
+
+
+
+
 }

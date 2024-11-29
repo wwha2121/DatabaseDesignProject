@@ -17,7 +17,7 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
-    public List<MovieDTO> getMoviesByContent(Long contentsId) {
+    public List<MovieDTO> getMoviesByContent(int contentsId) {
         // 콘텐츠 ID로 영화 목록을 조회하고, 바로 MovieDTO로 변환하여 반환
         return movieRepository.findByContent_ContentsId(contentsId).stream()
                 .map(MovieDTO::toMovieDTO)  // MovieDTO 변환

@@ -211,15 +211,16 @@
                                 <div class="fnyTL" style="padding-bottom: 3px;"></div>
                             </div>
                             <ul class="vDz4n">
-                                <li>
-                                    <a href="https://redirect.watcha.com/mars/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1nUkJESlN4cWtrOA"
-                                       rel="noopener noreferrer" target="_blank" title="관련영상 1">
+                                <li th:each="video : ${relatedVideos}">
+                                    <a th:href="${video.videoPath}" rel="noopener noreferrer" target="_blank" th:title="${video.description}">
                                         <div class="Mh0Kf">
                                             <div class="bZ5l7">
                                                 <div aria-hidden="true" class="QAPl8">
-                                                    <p class="dItcc ma29X">관련영상 1</p>
+                                                    <!-- 동영상 설명 -->
+                                                    <p class="dItcc ma29X" th:text="${video.description}">관련 영상 제목</p>
                                                 </div>
-                                                <img class="qTeFN" src="">
+                                                <!-- 동영상 썸네일 -->
+                                                <img class="qTeFN" th:src="${video.videoPath}" alt="관련 동영상 썸네일">
                                             </div>
                                         </div>
                                     </a>
@@ -394,6 +395,121 @@
                                 </div>
                                 <div class="fnyTL" style="padding-bottom: 3px;"></div>
                             </div>
+
+                            <!-- 댓글 기능 -->
+
+
+
+                            <form id="comment-form">
+                                <!-- 숨겨진 ID 필드 -->
+                                <input type="hidden" id="user-name" >
+
+                                <!-- 댓글 입력창 -->
+                                <textarea id="comment-text" placeholder="댓글을 입력하세요"></textarea>
+
+                                <!-- 제출 버튼 -->
+                                <button type="button" id="submit-comment">댓글 추가</button>
+                            </form>
+
+
+                            <script>
+                                // 로그인 정보를 저장할 변수
+                                document.getElementById("submit-comment").addEventListener("click", function () {
+                                    // 입력된 데이터 가져오기
+                                    const userEmail = document.querySelector(".user-email").textContent;
+                                    const commentText = document.getElementById("comment-text").value;
+                                    // userEmail.textContent = userEmail.textContent.replace("USER: ", "").trim();
+                                    console.log(userEmail);
+
+
+                                    if (!commentText) {
+                                        alert("댓글을 입력해주세요.");
+                                        return;
+                                    }
+
+                                    // 서버로 보낼 데이터 객체 생성
+                                    const reviewData = {
+                                        email: userEmail, // 사용자 ID
+                                        reviewContext: commentText // 댓글 내용
+                                    };
+
+                                    // 서버에 POST 요청
+                                    fetch("/reviews", {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json"
+                                        },
+                                        body: JSON.stringify(reviewData)
+                                    })
+                                        .then(response => response.text())
+                                        .then(data => {
+                                            alert("댓글이 성공적으로 추가되었습니다!");
+                                            console.log("Response:", data);
+                                            location.reload(); // 새로고침으로 UI 갱신
+                                        })
+                                        .catch(error => {
+                                            console.error("Error:", error);
+                                            alert("댓글 추가 중 오류가 발생했습니다.");
+                                        });
+                                });
+
+                            </script>
+
+                            <h1>리뷰 목록</h1>
+
+                            <!-- 리뷰를 렌더링할 컨테이너 -->
+                            <div id="review-list" class="review-container">
+                                <!-- JavaScript가 여기에 리뷰를 동적으로 추가 -->
+                            </div>
+
+
+                            <script>
+                                // 페이지 로드 시 모든 리뷰 가져오기
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    fetch("/reviews") // 서버의 리뷰 API 호출
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            renderReviews(data); // 리뷰 데이터를 렌더링
+                                        })
+                                        .catch(error => {
+                                            console.error("리뷰 데이터를 가져오는 중 오류 발생:", error);
+                                        });
+                                });
+
+                                // 리뷰 데이터를 받아 HTML로 렌더링하는 함수
+                                function renderReviews(reviews) {
+                                    const reviewList = document.getElementById("review-list");
+
+                                    if (reviews.length === 0) {
+                                        reviewList.innerHTML = "<p>작성된 리뷰가 없습니다.</p>";
+                                        return;
+                                    }
+
+                                    reviews.forEach(review => {
+                                        // 리뷰 카드 생성
+                                        const reviewDiv = document.createElement("div");
+                                        reviewDiv.classList.add("review");
+
+                                        // 작성자 이름
+                                        const reviewName = document.createElement("div");
+                                        reviewName.classList.add("review-name");
+                                        reviewName.textContent = review.name; // 서버에서 가져온 작성자 이름
+
+                                        // 리뷰 내용
+                                        const reviewContext = document.createElement("div");
+                                        reviewContext.classList.add("review-context");
+                                        reviewContext.textContent = review.reviewContext; // 서버에서 가져온 리뷰 내용
+
+                                        // 리뷰 카드에 요소 추가
+                                        reviewDiv.appendChild(reviewName);
+                                        reviewDiv.appendChild(reviewContext);
+
+                                        // 컨테이너에 리뷰 카드 추가
+                                        reviewList.appendChild(reviewDiv);
+                                    });
+                                }
+                            </script>
+
                             <ul class="EN7an">
                                 <li style="margin-top: 20px;">
                                     <article class="uM9e2">
