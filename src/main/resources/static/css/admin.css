@@ -1,3 +1,21 @@
+/* 기본 링크 색상 */
+a {
+    color: white; /* 기본 링크 색상: 흰색 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+/* 방문한 링크 색상 */
+a:visited {
+    color: white; /* 방문한 링크 색상: 흰색 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+/* 마우스를 올렸을 때 링크 색상 */
+a:hover {
+    color: white; /* hover 상태에서도 색상: 흰색 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
 .nav-container {
     background-color: white;
     width: 100%;
