@@ -1,3 +1,23 @@
+/* 버튼 스타일 */
+.admin-btn {
+    background-color: #4CAF50; /* 배경색 */
+    color: white; /* 글자색 */
+    padding: 15px 32px; /* 여백 */
+    text-align: center; /* 글자 가운데 정렬 */
+    text-decoration: none; /* 링크 밑줄 없애기 */
+    display: inline-block; /* 블록 요소처럼 보이게 하기 */
+    font-size: 16px; /* 글자 크기 */
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 */
+    transition: background-color 0.3s, transform 0.2s; /* 호버 시 애니메이션 효과 */
+}
+
+/* 호버 시 스타일 */
+.admin-btn:hover {
+    background-color: #45a049; /* 배경색 변화 */
+    transform: scale(1.1); /* 크기 확대 */
+}
+
 #subscribe-input {
     margin-top: 10px;
     padding: 10px;
