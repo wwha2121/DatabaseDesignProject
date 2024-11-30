@@ -23,7 +23,7 @@ public class TODOController {
 
     @GetMapping("/director_read")
     public String directorRead() {
-        return "admin/director_add";
+        return "admin/director_read";
     }
 
     @GetMapping("/actor_add")
@@ -33,6 +33,6 @@ public class TODOController {
 
     @GetMapping("/actor_read")
     public String actorRead() {
-        return "admin/actor_add";
+        return "admin/actor_read";
     }
 }

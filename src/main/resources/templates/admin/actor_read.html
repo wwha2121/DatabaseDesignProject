@@ -8,84 +8,98 @@
 <body>
 <nav class="nav-container">
     <div class="search-box">
-        <input type="text" class="search-box-input" placeholder="Search" />
-        <button class="search-box-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <img src="/img/logo.png" alt="로고" style="width: 10%; height: auto;"/>
+        <input type="text" class="search-box-input" placeholder="Search"/>
     </div>
-
     <div class="notification">
-        <div class="notification-icon">
-            <span class="notification-badge">5</span>
-            <i class="fa-solid fa-bell"></i>
-        </div>
-        <div class="notification-icon">
-            <span class="notification-badge">9</span>
-            <i class="fa-solid fa-envelope"></i>
-        </div>
-        <span id="notification-name">Hyewon Shin</span>
+        <span id="notification-name">admin</span>
     </div>
 </nav>
 <nav class="ani-navbar">
     <div class="ani-navbar-menu">
-        <i class="fa-solid fa-house ani-navbar-menu__icon"></i>
-        <p>Home</p>
+        <a href="/admin_main">
+            <i class="fa-solid fa-headphones"></i>
+            <p>HOME</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-headphones"></i>
-        <p>컨텐츠 추가</p>
+        <a href="/add_contents">
+            <i class="fa-solid fa-headphones"></i>
+            <p>컨텐츠 추가</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-headphones"></i>
-        <p>계약 추가</p>
+        <a href="/contract_registration">
+            <i class="fa-solid fa-headphones"></i>
+            <p>계약 추가</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-flag"></i>
-        <p>영화 추가</p>
+        <a href="/add_movie">
+            <i class="fa-solid fa-headphones"></i>
+            <p>영화 추가</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>시리즈 추가</p>
+        <a href="/add_episode">
+            <i class="fa-solid fa-headphones"></i>
+            <p>시리즈 추가</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-headphones"></i>
-        <p>배우 추가</p>
+        <a href="/director_add">
+            <i class="fa-solid fa-headphones"></i>
+            <p>감독 추가</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-headphones"></i>
-        <p>감독 추가</p>
+        <a href="/actor_add">
+            <i class="fa-solid fa-headphones"></i>
+            <p>배우 추가</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>관리자 등록</p>
+        <a href="/admin_registration">
+            <i class="fa-solid fa-headphones"></i>
+            <p>관리자 등록</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>관리자 조회</p>
+        <a href="/admin_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>관리자 조회</p>
+        </a>
+    </div>
+
+    <div class="ani-navbar-menu ani-navbar-menu__icon">
+        <a href="/contract_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>계약 조회</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>계약 조회</p>
+        <a href="/director_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>감독 조회</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>배우 조회</p>
+        <a href="/actor_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>배우 조회</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>감독 조회</p>
+        <a href="/member_read">
+            <i class="fa-solid fa-headphones"></i>
+            <p>멤버 조회</p>
+        </a>
     </div>
     <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>멤버 조회</p>
-    </div>
-    <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>로그인</p>
-    </div>
-    <div class="ani-navbar-menu ani-navbar-menu__icon">
-        <i class="fa-solid fa-chart-pie"></i>
-        <p>Watchu 페이지</p>
+        <a href="/main">
+            <i class="fa-solid fa-headphones"></i>
+            <p>Watchu OTT 페이지</p>
+        </a>
     </div>
 </nav>
 <div class="row">
@@ -117,10 +131,10 @@
                     <tbody>
                     <tr>
                         <td>actor1</td>
-                        <td>고민시</td>
-                        <td>2002-02-02</td>
-                        <td>엑터스</td>
-                        <td>상속자들</td>
+                        <td>미야케 켄타</td>
+                        <td>1991-02-02</td>
+                        <td>슬램덩크</td>
+                        <td>메이저</td>
 
                     </tr>
                     <tr>
@@ -129,35 +143,7 @@
                         <td>1999-09-09</td>
                         <td>엑터스</td>
                         <td>기생충</td>
-
                     </tr>
-                    <tr>
-                        <td>actor2</td>
-                        <td>송강호</td>
-                        <td>1999-09-09</td>
-                        <td>엑터스</td>
-                        <td>기생충</td>
-
-                    </tr>
-                    <tr>
-                        <td>actor2</td>
-                        <td>송강호</td>
-                        <td>1999-09-09</td>
-                        <td>엑터스</td>
-                        <td>기생충</td>
-
-                    </tr>
-                    <tr>
-                        <td>actor2</td>
-                        <td>송강호</td>
-                        <td>1999-09-09</td>
-                        <td>엑터스</td>
-                        <td>기생충</td>
-
-                    </tr>
-
-
-                    </tbody>                </table>
             </div>
         </div>
     </div>
