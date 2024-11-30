@@ -186,7 +186,6 @@
                 <!-- 중간 콘텐츠 메뉴 -->
                 <ul class="hSUzc HuO0J jNVX6 MVUF5">
                     <li><button class="BFdDK LIpRy bBcRu qz3Mr s6bBH" type="button">콘텐츠 정보</button></li>
-                    <li><button class="BFdDK LIpRy bBcRu qz3Mr" type="button">관련 콘텐츠</button></li>
                 </ul>
                 
                 <section class="cnx5m gWb3f">
@@ -194,7 +193,6 @@
                         <section class="u5lkC">
                             <ul>
                                 <li class="YB1TC qz3Mr">
-                                    <p class="j4ViD">누적 관객 수 [ 0 ] 돌파 영화</p>
                                 </li>
                             </ul>
                         </section>
@@ -388,7 +386,7 @@
                                     <div>
                                         <h2 class="Qzx40 PO6sA">왓챠피디아 사용자 평
                                             <div class="ow_X7">
-                                                <span class="SbAhi qz3Mr">97929</span>
+                                                <span class="SbAhi qz3Mr"></span>
                                             </div>
                                         </h2>
                                     </div>
@@ -400,15 +398,15 @@
 
 
 
-                            <form id="comment-form">
+                            <form id="comment-form" style="display: flex; flex-direction: column;">
                                 <!-- 숨겨진 ID 필드 -->
-                                <input type="hidden" id="user-name" >
+                                <input type="hidden" id="user-name">
 
                                 <!-- 댓글 입력창 -->
-                                <textarea id="comment-text" placeholder="댓글을 입력하세요"></textarea>
+                                <textarea id="comment-text" placeholder="댓글을 입력하세요" style="width: 100%; height: 150px; font-size: 16px; padding: 10px;"></textarea>
 
                                 <!-- 제출 버튼 -->
-                                <button type="button" id="submit-comment">댓글 추가</button>
+                                <button type="button" id="submit-comment" style="background-color: #28a745; color: white; font-size: 18px; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; align-self: flex-end;">댓글 추가</button>
                             </form>
 
 
@@ -455,7 +453,7 @@
 
                             </script>
 
-                            <h1>리뷰 목록</h1>
+                            <h1 style="margin-top: 20px;">리뷰 목록</h1>
 
                             <!-- 리뷰를 렌더링할 컨테이너 -->
                             <div id="review-list" class="review-container">
@@ -464,6 +462,87 @@
 
 
                             <script>
+                                // 리뷰 데이터를 받아 HTML로 렌더링하는 함수
+                                function renderReviews(reviews) {
+                                    const reviewList = document.getElementById("review-list");
+
+                                    if (reviews.length === 0) {
+                                        reviewList.innerHTML = "<p>작성된 리뷰가 없습니다.</p>";
+                                        return;
+                                    }
+
+                                    reviews.forEach(review => {
+                                        // 리뷰 항목 생성
+                                        const reviewItem = document.createElement("li");
+                                        reviewItem.style.marginTop = "20px"; // 댓글 간격
+
+                                        const article = document.createElement("article");
+                                        article.classList.add("uM9e2");
+
+                                        // 사용자 프로필 이미지
+                                        const userImgDiv = document.createElement("div");
+                                        userImgDiv.classList.add("MkENi");
+                                        userImgDiv.style.marginRight = "10px";
+
+                                        const userImg = document.createElement("img");
+                                        userImg.alt = "img";
+                                        userImg.classList.add("lAvqc");
+                                        userImg.src = "../../img/user.png"; // 이미지 경로, 필요시 변경
+
+                                        userImgDiv.appendChild(userImg);
+
+                                        // 리뷰 내용
+                                        const reviewContentDiv = document.createElement("div");
+                                        reviewContentDiv.classList.add("PSrUz");
+
+                                        // 작성자 이름과 평점
+                                        const nameAndRatingDiv = document.createElement("div");
+                                        nameAndRatingDiv.classList.add("ii2mE");
+                                        nameAndRatingDiv.style.marginBottom = "10px";
+
+                                        const userNameDiv = document.createElement("div");
+                                        userNameDiv.classList.add("RA4z_");
+                                        userNameDiv.classList.add("qz3Mr");
+                                        const userNameLink = document.createElement("a");
+                                        userNameLink.setAttribute("rel", "noopener noreferrer");
+                                        userNameLink.setAttribute("target", "_blank");
+                                        userNameLink.textContent = review.name; // 서버에서 받은 이름
+
+                                        userNameDiv.appendChild(userNameLink);
+                                        nameAndRatingDiv.appendChild(userNameDiv);
+
+                                        // 별점 아이콘 (예: 5개 별)
+                                        const stars = document.createElement("div");
+                                        stars.style.marginLeft = "10px"; // 이름과 별점 사이에 간격을 둠
+                                        for (let i = 0; i < 5; i++) {
+                                            const starIcon = document.createElement("i");
+                                            starIcon.classList.add("fa-solid", "fa-star");
+                                            stars.appendChild(starIcon);
+                                        }
+
+                                        nameAndRatingDiv.appendChild(stars);
+
+                                        // 리뷰 내용
+                                        const reviewTextDiv = document.createElement("p");
+                                        reviewTextDiv.classList.add("LinesEllipsis");
+                                        reviewTextDiv.textContent = review.reviewContext; // 서버에서 받은 리뷰 내용
+
+                                        // 리뷰 내용과 작성자 정보 추가
+                                        reviewContentDiv.appendChild(nameAndRatingDiv);
+                                        reviewContentDiv.appendChild(reviewTextDiv);
+
+                                        // 리뷰 카드에 이미지, 작성자 정보, 리뷰 내용 추가
+                                        article.appendChild(userImgDiv);
+                                        article.appendChild(reviewContentDiv);
+
+                                        // 전체 li 요소에 article을 추가
+                                        reviewItem.appendChild(article);
+
+                                        // 최종적으로 review-list에 리뷰 추가
+                                        reviewList.appendChild(reviewItem);
+                                    });
+                                }
+
                                 // 페이지 로드 시 모든 리뷰 가져오기
                                 document.addEventListener("DOMContentLoaded", function () {
                                     fetch("/reviews") // 서버의 리뷰 API 호출
@@ -475,130 +554,8 @@
                                             console.error("리뷰 데이터를 가져오는 중 오류 발생:", error);
                                         });
                                 });
-
-                                // 리뷰 데이터를 받아 HTML로 렌더링하는 함수
-                                function renderReviews(reviews) {
-                                    const reviewList = document.getElementById("review-list");
-
-                                    if (reviews.length === 0) {
-                                        reviewList.innerHTML = "<p>작성된 리뷰가 없습니다.</p>";
-                                        return;
-                                    }
-
-                                    reviews.forEach(review => {
-                                        // 리뷰 카드 생성
-                                        const reviewDiv = document.createElement("div");
-                                        reviewDiv.classList.add("review");
-
-                                        // 작성자 이름
-                                        const reviewName = document.createElement("div");
-                                        reviewName.classList.add("review-name");
-                                        reviewName.textContent = review.name; // 서버에서 가져온 작성자 이름
-
-                                        // 리뷰 내용
-                                        const reviewContext = document.createElement("div");
-                                        reviewContext.classList.add("review-context");
-                                        reviewContext.textContent = review.reviewContext; // 서버에서 가져온 리뷰 내용
-
-                                        // 리뷰 카드에 요소 추가
-                                        reviewDiv.appendChild(reviewName);
-                                        reviewDiv.appendChild(reviewContext);
-
-                                        // 컨테이너에 리뷰 카드 추가
-                                        reviewList.appendChild(reviewDiv);
-                                    });
-                                }
                             </script>
-
                             <ul class="EN7an">
-                                <li style="margin-top: 20px;">
-                                    <article class="uM9e2">
-                                        <div class="MkENi" style="margin-right: 10px;">
-                                            <a href="" rel="noopener noreferrer" target="_blank" title="이미지">
-                                                <img alt="img" class="lAvqc" src="../../img/user.png">
-                                            </a>
-                                        </div>
-                                        <div class="PSrUz">
-                                            <div class="ii2mE" style="margin-bottom: 10px;">
-                                                <div class="RA4z_ qz3Mr" style="margin-right: 10px;">
-                                                    <a rel="noopener noreferrer" target="_blank" title="id">임승택</a>
-                                                </div>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p class="LinesEllipsis">역시 스포츠 영화란 이런 것!</p>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li style="margin-top: 20px;">
-                                    <article class="uM9e2">
-                                        <div class="MkENi" style="margin-right: 10px;">
-                                            <a href="" rel="noopener noreferrer" target="_blank" title="이미지">
-                                                <img alt="img" class="lAvqc" src="../../img/user.png">
-                                            </a>
-                                        </div>
-                                        <div class="PSrUz">
-                                            <div class="ii2mE" style="margin-bottom: 10px;">
-                                                <div class="RA4z_ qz3Mr" style="margin-right: 10px;">
-                                                    <a rel="noopener noreferrer" target="_blank" title="id">김예승</a>
-                                                </div>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p class="LinesEllipsis">바위처럼 단단한 연출</p>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li style="margin-top: 20px;">
-                                    <article class="uM9e2">
-                                        <div class="MkENi" style="margin-right: 10px;">
-                                            <a href="" rel="noopener noreferrer" target="_blank" title="이미지">
-                                                <img alt="img" class="lAvqc" src="../../img/user.png">
-                                            </a>
-                                        </div>
-                                        <div class="PSrUz">
-                                            <div class="ii2mE" style="margin-bottom: 10px;">
-                                                <div class="RA4z_ qz3Mr" style="margin-right: 10px;">
-                                                    <a rel="noopener noreferrer" target="_blank" title="id">노문호</a>
-                                                </div>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p class="LinesEllipsis">심장을 울리는 버저비터. 이들의 다른 이야기도 궁금하다. 2가 나오려나?</p>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li style="margin-top: 20px;">
-                                    <article class="uM9e2">
-                                        <div class="MkENi" style="margin-right: 10px;">
-                                            <a href="" rel="noopener noreferrer" target="_blank" title="이미지">
-                                                <img alt="img" class="lAvqc" src="../../img/user.png">
-                                            </a>
-                                        </div>
-                                        <div class="PSrUz">
-                                            <div class="ii2mE" style="margin-bottom: 10px;">
-                                                <div class="RA4z_ qz3Mr" style="margin-right: 10px;">
-                                                    <a rel="noopener noreferrer" target="_blank" title="id">전성주</a>
-                                                </div>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p class="LinesEllipsis">최고… 더 말이 필요가 있을까? OST도 연출도 몰입감이 너무 좋았고 재밌었다.</p>
-                                        </div>
-                                    </article>
-                                </li>
                             </ul>
                         </section>
                         <!-- 댓글 섹션 끝-->
