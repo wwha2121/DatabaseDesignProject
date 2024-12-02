@@ -126,6 +126,8 @@
                         <th>감독 생년월일</th>
                         <th>소속사</th>
                         <th>컨텐츠 이름</th>
+                        <th>수정</th>
+                        <th>삭제</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -135,7 +137,16 @@
                         <td>2002-02-02</td>
                         <td>디렉터스</td>
                         <td>기생충</td>
-
+                        <td>
+                            <button class="btn btn-danger" onclick="promptPasswordForEdit(this)">
+                                수정
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="promptPasswordForDelete(this)">
+                                삭제
+                            </button>
+                        </td>
                     </tr>
                     <tr>
                         <td>director2</td>
@@ -143,13 +154,35 @@
                         <td>1999-09-09</td>
                         <td>슬램덩크</td>
                         <td>카에데 퍼플</td>
-
+                        <td>
+                            <button class="btn btn-danger" onclick="promptPasswordForEdit(this)">
+                                수정
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="promptPasswordForDelete(this)">
+                                삭제
+                            </button>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
     </div>
 </div>
-
 </body>
+<script>
+    // Function to handle Modify (수정) action
+    function promptPasswordForEdit(button) {
+        // Redirect to the /main page without checking password
+        window.location.href = '/director_edit';
+    }
+
+    // Function to handle Delete (삭제) action
+    function promptPasswordForDelete(button) {
+        // Remove the row from the table directly
+        button.closest('tr').remove();
+        alert("삭제되었습니다.");
+    }
+</script>
 </html>

@@ -23,14 +23,14 @@
             </a>
             <section class="pCA8j">
                 <ul aria-label="" class="EdiMU">
-                    <li class="bXT_X">
+                    <li class="bXT_X" th:if="${session.userEmail != null}">
                         <a class="bzg0x Zcvzh" id="subscribe-button">
                             <div class="z9hr7"><i class="fa-solid fa-e"></i></div>
                             구독 등록
                         </a>
                     </li>
                     <!-- 구독 입력창 (초기에는 숨겨둠) -->
-                    <li class="bXT_X" >
+                    <li class="bXT_X" th:if="${session.userEmail != null}">
                         <div id="subscribe-input" style="display: none; margin-left: 10px; background-color: transparent;"> <!-- 왼쪽 여백 5px 추가 -->
                             <label for="subscription-id" style="font-size: 14px; font-weight: bold; display: block;">구독 ID:</label>
                             <input type="text" id="subscription-id" placeholder="구독 ID를 입력하세요"
@@ -102,6 +102,9 @@
                         <li th:if="${session.userEmail != null}">
                             <span class="user-email" th:text="'USER: ' + ${session.userEmail}"
                                   style="font-size: 23px; padding-top: 10px;padding-right: 15px;"></span>
+                        </li>
+                        <li>
+                            <p id="current-subscription"></p>
                         </li>
                         <!-- 로그아웃 버튼 -->
                         <li th:if="${session.userEmail != null}">
@@ -320,10 +323,15 @@
             // 구독 제출 버튼 클릭 시 처리
             document.getElementById('submit-subscription').addEventListener('click', function() {
                 var subscriptionId = document.getElementById('subscription-id').value;
+                var currentSubscription = document.getElementById('current-subscription'); // 메시지를 표시할 <p> 요소
+
                 if (subscriptionId) {
+                    // 구독 성공 메시지를 화면에 표시
                     alert('구독 ID: ' + subscriptionId + '로 구독되었습니다.');
                     // 구독 요청을 서버로 전송하는 코드 추가 가능
+                    currentSubscription.textContent = '[구독 ID: ' + subscriptionId + ']';
                 } else {
+                    // 구독 ID를 입력하지 않은 경우 메시지 표시
                     alert('구독 ID를 입력해주세요.');
                 }
             });

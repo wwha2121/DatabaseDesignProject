@@ -106,7 +106,7 @@
     <div class="col-lg-12">
         <div class="box">
             <div class="header-button">
-                <h2>관리자조회</h2>
+                <h3>감독 정보</h3>
                 <div class="dropdown">
                     <button class="dropbtn">
                         <span class="dropbtn_icon">정렬</span>
@@ -116,6 +116,8 @@
                         <a href="#">생년월일</a>
                         <a href="#">성별</a>
                         <a href="#">Email</a>
+                        <a href="#">수정</a>
+                        <a href="#">삭제</a>
                     </div>
                 </div>
             </div>
@@ -127,6 +129,8 @@
                         <th>생년월일</th>
                         <th>성별</th>
                         <th>Email</th>
+                        <th>수정</th>
+                        <th>삭제</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -135,6 +139,16 @@
                         <td>2002-02-02</td>
                         <td>남</td>
                         <td>admin01@gmail.com</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="promptPasswordForEdit(this)">
+                                수정
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="promptPasswordForDelete(this)">
+                                삭제
+                            </button>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -144,4 +158,41 @@
 </div>
 
 </body>
+
+<script>
+    // Function to handle Modify (수정) action
+    function promptPasswordForEdit(button) {
+        const password = prompt("수정을 위해 비밀번호를 입력해주세요.");
+
+        if (password) {
+            // Check if the password is correct
+            if (password === '1234') {
+                // Redirect to the /abc page if the password is correct
+                window.location.href = '/admin_edit';
+            } else {
+                alert("비밀번호가 틀렸습니다.");
+            }
+        } else {
+            alert("비밀번호가 입력되지 않았습니다.");
+        }
+    }
+
+    // Function to handle Delete (삭제) action
+    function promptPasswordForDelete(button) {
+        const password = prompt("삭제를 위해 비밀번호를 입력해주세요.");
+
+        if (password) {
+            // Check if the password is correct
+            if (password === '1234') {
+                // Remove the row from the table if the password is correct
+                button.closest('tr').remove();
+                alert("삭제되었습니다.");
+            } else {
+                alert("비밀번호가 틀렸습니다.");
+            }
+        } else {
+            alert("비밀번호가 입력되지 않았습니다.");
+        }
+    }
+</script>
 </html>

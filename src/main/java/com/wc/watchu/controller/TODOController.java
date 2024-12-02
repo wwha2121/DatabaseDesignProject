@@ -35,4 +35,20 @@ public class TODOController {
     public String actorRead() {
         return "admin/actor_read";
     }
+
+    @GetMapping("/actor_edit")
+    public String actorEdit() {
+        return "admin/actor_edit";
+    }
+
+    @GetMapping("/director_edit")
+    public String directorEdit() {
+        return "admin/director_edit";
+    }
+
+    @GetMapping("/admin_edit")
+    public String adminEdit() {
+        return "admin/admin_edit";
+    }
+
 }
